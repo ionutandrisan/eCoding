@@ -1,0 +1,38 @@
+.rightNavbarContainerForNotLoggedUser {
+  width: 40%;
+  text-align: right;
+}
+
+.rightNavbarContainerForNotLoggedUser a {
+  margin: 0 10% 0 0;
+}
+
+.rightNavbarContainerForLoggedUser {
+  text-align: right;
+  float: right;
+  width: 40%;
+  padding-right: 4%;
+  display: flex;
+}
+
+.rightNavbarContainerForLoggedUser img {
+  height: 30px;
+  border-radius: 100%;
+  margin-right: 4%;
+  margin-left: auto;
+  vertical-align: center;
+}
+
+.rightNavbarContainerForLoggedUserButton {
+  padding-top: 3px;
+  margin-top: 0;
+  background-color: white;
+  border: 0;
+  font-weight: bold;
+  color: #484848;
+  text-align: right;
+}
+
+.rightNavbarContainerForLoggedUserButton:hover {
+  cursor: pointer;
+}

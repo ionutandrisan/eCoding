@@ -1,0 +1,8 @@
+.registerFooterContainer {
+  text-align: center;
+}
+
+.registerFooterContainer a {
+  text-decoration: none;
+  color: blue;
+}

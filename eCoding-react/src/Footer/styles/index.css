@@ -1,0 +1,15 @@
+.footerContainer {
+  margin-top: 1rem;
+  padding: 1rem;
+  color: #73726c;
+  border-top: 1px solid #dcdacb;
+  vertical-align: bottom;
+}
+
+.rightAlignItemsFooter {
+  text-align: right;
+  margin-right: 5%;
+  font-weight: 400;
+  line-height: 1.4;
+  font-size: 0.8rem;
+}

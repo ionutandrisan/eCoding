@@ -1,0 +1,14 @@
+.navbarContainer {
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  padding: 1.25% 1.5%;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08);
+  height: 10%;
+}
+
+.navbarContainer a {
+  text-decoration: none;
+  color: #484848;
+}

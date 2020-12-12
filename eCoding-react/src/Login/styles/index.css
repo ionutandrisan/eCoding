@@ -1,0 +1,41 @@
+.loginContainer {
+  margin: 0 25%;
+  height: 85vh;
+}
+
+.loginFormContainer {
+  margin: 5%;
+  text-align: center;
+  border-bottom: solid 1px #dedfe0;
+}
+
+.loginFormContainer input[type="text"],
+input[type="email"],
+input[type="password"] {
+  margin-bottom: 2.5%;
+  border-radius: 5px;
+  color: #29303b;
+  font-size: 18px;
+  height: auto;
+  padding: 2.5% 10% 2.5% 10%;
+  border-width: 1px;
+  width: 80%;
+}
+
+.loginFormContainer input[type="submit"] {
+  margin-top: 6px;
+  background-color: #ec5252;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  height: auto;
+  padding: 11px 45px 12px 40px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.loginFormContainer p {
+  font-size: 12px;
+  font-weight: 500;
+}

@@ -1,0 +1,8 @@
+.loginFooterContainer {
+  text-align: center;
+}
+
+.loginFooterContainer a {
+  text-decoration: none;
+  color: blue;
+}

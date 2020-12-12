@@ -1,0 +1,9 @@
+.registerHeaderTitle {
+  border-bottom: solid 1px #dedfe0;
+  color: #29303b;
+  display: block;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 5%;
+  text-align: center;
+}

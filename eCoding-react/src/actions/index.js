@@ -23,3 +23,17 @@ export const setProgrammingLanguageForRunningCode = (language) => {
     payload: language,
   };
 };
+
+export const setUserCode = (code) => {
+  return {
+    type: "SET_UNREGISTERED_USER_CODE",
+    payload: code,
+  };
+};
+
+export const setCodeOutput = (output) => {
+  return {
+    type: "SET_CODE_OUTPUT",
+    payload: output,
+  };
+};

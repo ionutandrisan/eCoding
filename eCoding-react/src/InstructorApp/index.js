@@ -21,7 +21,7 @@ const InstructorApp = () => {
 
         <Route path="/register" exact component={Register} />
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
   );
 };

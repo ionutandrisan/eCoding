@@ -1,5 +1,5 @@
 .writeUserCodeContainer {
-  height: 350px;
   width: 40%;
-  margin-left: 10%;
+  min-width: 300px;
+  margin-left: 7.5%;
 }

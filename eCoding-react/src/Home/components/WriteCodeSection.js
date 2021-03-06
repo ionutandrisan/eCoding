@@ -1,34 +1,46 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import "../styles/WriteCodeSection.css";
-import CodeMirror from "@uiw/react-codemirror";
-import "codemirror/addon/display/autorefresh";
-import "codemirror/addon/comment/comment";
-import "codemirror/addon/edit/matchbrackets";
-import "codemirror/keymap/sublime";
+import { Controlled as CodeMirror } from "react-codemirror2";
+import "codemirror/lib/codemirror.css";
+import "codemirror/theme/material.css";
+import "codemirror/mode/javascript/javascript";
+import "codemirror/mode/python/python";
 import "codemirror/theme/monokai.css";
-import "codemirror/addon/hint/javascript-hint";
-import "codemirror/addon/hint/show-hint";
-import "codemirror/addon/hint/show-hint.css";
+import { setUserCode } from "../../actions";
+import RunCodeButton from "./RunCodeButton";
 
-const WriteCodeSection = () => {
+const WriteCodeSection = (props) => {
+  const dispatch = useDispatch();
   const programmingLanguage = useSelector(
     (state) => state.programmingLanguageToRunCode
   );
+  const userCodeFromRedux = useSelector((state) => state.userCode);
+
+  const codeMirror = (
+    <CodeMirror
+      value={userCodeFromRedux}
+      onBeforeChange={(editor, data, value) => {
+        dispatch(setUserCode(value));
+      }}
+      onChange={(editor, data, value) => {}}
+      options={{
+        theme: "monokai",
+        tabSize: 2,
+        mode: programmingLanguage,
+        lineNumbers: true,
+        extraKeys: { "Ctrl-Space": "autocomplete" },
+      }}
+    />
+  );
 
   return (
-    <div className="writeUserCodeContainer">
-      <CodeMirror
-        value="//Your code"
-        options={{
-          theme: "monokai",
-          tabSize: 2,
-          mode: programmingLanguage,
-          lineNumbers: true,
-          extraKeys: { "Ctrl-Space": "autocomplete" },
-        }}
-      />
-    </div>
+    <>
+      <div className="writeUserCodeContainer">
+        {codeMirror}
+        <RunCodeButton />
+      </div>
+    </>
   );
 };
 

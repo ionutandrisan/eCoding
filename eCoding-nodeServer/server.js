@@ -19,6 +19,9 @@ dbConn.createDatabaseConnection();
 const usersRoutes = require("./src/Users/usersRoutes");
 app.use("", usersRoutes);
 
+const codeRunnerRoutes = require("./src/CodeRunner/codeRunnerRoutes");
+app.use("", codeRunnerRoutes);
+
 app.listen(PORT, function () {
   console.log(`Server Listening on ${PORT}`);
 });

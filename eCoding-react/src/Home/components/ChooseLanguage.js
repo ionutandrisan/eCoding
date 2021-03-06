@@ -1,8 +1,12 @@
 import React from "react";
-import Select from "react-select";
 import "../styles/ChooseLanguage.css";
 import { useSelector, useDispatch } from "react-redux";
-import { setProgrammingLanguageForRunningCode } from "../../actions";
+import {
+  setProgrammingLanguageForRunningCode,
+  setUserCode,
+  setCodeOutput,
+} from "../../actions";
+import { setCodeMirrorDefaultValue } from "../../utils/codeMirrorUtils";
 
 const ChooseLanguage = () => {
   const options = [
@@ -10,27 +14,33 @@ const ChooseLanguage = () => {
     { value: "python", label: "Python" },
   ];
 
-  const dispatch = useDispatch();
+  const selectOptions = options.map((option) => {
+    return (
+      <option key={option.value} value={option.value}>
+        {option.label}
+      </option>
+    );
+  });
 
+  const dispatch = useDispatch();
   const programmingLanguageToRunCode = useSelector(
     (state) => state.programmingLanguageToRunCode
   );
 
-  const defaultOption = options.find(
-    (option) => option.value === programmingLanguageToRunCode
-  );
-
   const onProgrammingLanguageChange = (event) => {
-    dispatch(setProgrammingLanguageForRunningCode(event.value));
+    dispatch(setProgrammingLanguageForRunningCode(event.target.value));
+    dispatch(setUserCode(setCodeMirrorDefaultValue(event.target.value)));
+    dispatch(setCodeOutput("Output:"));
   };
 
   return (
     <div className="changeProgrammingLanguageSelector">
-      <Select
-        options={options}
-        defaultValue={defaultOption}
+      <select
+        value={programmingLanguageToRunCode}
         onChange={onProgrammingLanguageChange}
-      />
+      >
+        {selectOptions}
+      </select>
     </div>
   );
 };

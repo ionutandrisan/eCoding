@@ -1,0 +1,9 @@
+.codeOutputSectionContainer {
+  height: 300px;
+  width: 40%;
+  min-width: 300px;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: #272822;
+  color: #f8f8f2;
+}
